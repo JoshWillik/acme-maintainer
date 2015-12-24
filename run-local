@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+docker run -it \
+  -p 80:80 \
+  -v /database \
+  -v $PWD/src:/usr/src/app \
+  -w /usr/src/app \
+  python:3 \
+  bash -c 'pip install -r requirements.txt && bash'
